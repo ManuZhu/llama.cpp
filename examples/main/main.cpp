@@ -695,7 +695,11 @@ int main(int argc, char ** argv) {
 
             // LOG("last: %s\n", LOG_TOKENS_TOSTR_PRETTY(ctx, smpl->prev.to_vector()).c_str());
 
-            embd.push_back(id);
+            if (params.force_pos == n_remain) {
+                embd.push_back(params.force_voc);
+            } else {
+                embd.push_back(id);
+            }
 
             // echo this to console
             input_echo = true;

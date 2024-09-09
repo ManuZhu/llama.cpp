@@ -686,7 +686,20 @@ std::vector<llama_arg> gpt_params_parser_init(gpt_params & params, llama_example
         }
     };
 
-
+    add_opt(llama_arg(
+        {"--force-pos"}, "N",
+        "test",
+        [](gpt_params & params, int value) {
+            params.force_pos = value;
+        }
+    ));
+    add_opt(llama_arg(
+        {"--force-voc"}, "N",
+        "test",
+        [](gpt_params & params, int value) {
+            params.force_voc = value;
+        }
+    ));
     add_opt(llama_arg(
         {"-h", "--help", "--usage"},
         "print usage and exit",

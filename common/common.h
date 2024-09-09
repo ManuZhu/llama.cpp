@@ -100,6 +100,8 @@ struct cpu_params {
 struct gpt_params {
     enum llama_example curr_ex    = LLAMA_EXAMPLE_COMMON;
 
+    int32_t force_pos             =    -1;
+    int32_t force_voc             =    -1;
     int32_t n_predict             =    -1; // new tokens to predict
     int32_t n_ctx                 =     0; // context size
     int32_t n_batch               =  2048; // logical batch size for prompt processing (must be >=32 to use BLAS)
